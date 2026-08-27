@@ -54,6 +54,7 @@ const Countries = ({ countries, findCountry, selectedCountry, setSelectedCountry
 
                     <img src={values.flags.png} alt="flag" />
 
+                    <h2>Weather in {values.capital}</h2>
                     {weatherData !== null ? (
                         <div>
                             <p>Temperature: {Math.round(weatherData.temp - 273.15)} °C</p>
@@ -69,7 +70,6 @@ const Countries = ({ countries, findCountry, selectedCountry, setSelectedCountry
 
         return (
             <div>
-                <button onClick={() => setSelectedCountry(null)}>back</button>
                 {countryDetails(selectedCountry)}
             </div>
         )

@@ -17,10 +17,15 @@ const App = () => {
       })
   }, [])
 
+   useEffect(() => {
+    if (findCountry === "") {
+      setSelectedCountry(null)
+    }
+  }, [findCountry])
+
    if (!countries) { 
     return null 
   }
-
 
   return (
     <div>
