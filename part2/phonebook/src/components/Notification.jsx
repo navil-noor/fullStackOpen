@@ -1,7 +1,7 @@
 const Notification = ({ message }) => {
 
     const successMsg = {
-        color: 'red',
+        color: 'green',
         background: 'lightgrey',
         fontSize: '20px',
         borderStyle: 'solid',

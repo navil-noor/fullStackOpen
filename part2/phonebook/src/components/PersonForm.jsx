@@ -1,20 +1,19 @@
 import personService from "../services/persons"
 import Notification from "./Notification"
-
-
-const [addMessage, setAddMessage] = useState('a message')
+import { useState } from "react"
 
 const PersonForm = ({ persons, setPersons, newName, setNewName, newNumber, setNewNumber }) => {
+
+    const [addMessage, setAddMessage] = useState(null)
 
     const addName = (event) => {
     event.preventDefault()
     const newPerson = {name: newName, number: newNumber}
     const existingPerson = persons.find(x => x.name === newName)
     const numberChanged = {...existingPerson, number: newNumber}
-    const message = window.confirm(`${newName} is already added to phonebook, replace the old number with a new one?`)
 
     if (existingPerson) {
-      if (message) {
+      if (window.confirm(`${newName} is already added to phonebook, replace the old number with a new one?`)) {
         personService
           .update(existingPerson.id, numberChanged)
           .then(returnedPerson => {
