@@ -1,3 +1,3 @@
 # Phonebook Backend
 
-Deployed at: [https://phonebook-backend-resb.onrender.com/api/persons](https://phonebook-backend-resb.onrender.com/api/persons)
+Deployed at: [https://phonebook-backend-resb.onrender.com/](https://phonebook-backend-resb.onrender.com/)
