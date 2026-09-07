@@ -28,7 +28,7 @@ const PersonForm = ({ persons, setPersons, newName, setNewName, newNumber, setNe
               }, 5000)
     })
           .catch(message => {
-            setAddMessage(`Number not added for ${newName}`)
+            setAddMessage(message.response.data.error)
             setTimeout(() => {
               setAddMessage(null)
             }, 5000)
@@ -47,7 +47,7 @@ const PersonForm = ({ persons, setPersons, newName, setNewName, newNumber, setNe
             setNewNumber('')
           })
           .catch(message => {
-            setAddMessage(`Cannot add ${newName}`)
+            setAddMessage(message.response.data.error)
           setTimeout(() => {
             setAddMessage(null)
           }, 5000)
