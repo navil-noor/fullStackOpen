@@ -6,3 +6,4 @@ My exercise submissions for the Full Stack Open course.
 - Part 1: courseinfo, unicafe, anecdotes
 - Part 2: countries, courseinfo, phonebook
 - Part 3: phonebook-backend
+- Part 4: bloglist-backend
