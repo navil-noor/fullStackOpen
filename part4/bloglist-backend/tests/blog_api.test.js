@@ -20,15 +20,15 @@ const initialBlogs = [
         url: "http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
         likes: 5,
     }  
-    ]
+]
 
-    beforeEach(async () => {
-        await Blog.deleteMany({})
-        let blogObject = new Blog(initialBlogs[0])
-        await blogObject.save()
-        blogObject = new Blog(initialBlogs[1])
-        await blogObject.save()
-    })
+beforeEach(async () => {
+    await Blog.deleteMany({})
+    let blogObject = new Blog(initialBlogs[0])
+    await blogObject.save()
+    blogObject = new Blog(initialBlogs[1])
+    await blogObject.save()
+})
 
 test('blogs are returned as json', async () => {
     await api
@@ -127,7 +127,7 @@ test('changing likes', async () => {
     
     const updatedBlog = await api.get(`/api/blogs/${blogToTest.id}`)
     
-    assert.strictEqual(newLikes, updatedBlog.body.likes)
+    assert.strictEqual(updatedBlog.body.likes, newLikes)
 })
 
 after(async () => {
